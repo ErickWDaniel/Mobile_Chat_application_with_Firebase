@@ -8,7 +8,6 @@
     android:orientation="vertical"
     android:background="@drawable/skya"
    >
-
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,7 +30,7 @@
                             android:layout_width="90dp"
                             android:layout_height="90dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/usericon"
+                            android:src="@drawable/user_icon"
                             android:layout_gravity="center"
                             android:contentDescription="@string/profile_picure" />
 
@@ -40,7 +39,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
-                            android:background="@drawable/ribbonbutton"
+                            android:background="@drawable/ribbonbuttonred"
 
                             android:elevation="3dp"
                             android:text="@string/upload_photo"
@@ -51,7 +50,8 @@
                             android:id="@+id/username_textview_update"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
                             android:text="@string/username"
                             android:textColor="@color/atcorange"
                             android:textStyle="bold"
@@ -61,7 +61,7 @@
                             android:id="@+id/username_edittext_update"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
+                            android:layout_margin="10dp"
                             android:autofillHints=""
                             android:background="@drawable/ribbonwebview"
                             android:hint="@string/enter_username"
@@ -76,7 +76,8 @@
                             android:id="@+id/admission_number_textview_update"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
+                         android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
                             android:text="@string/admission_number"
                             android:textColor="@color/atcorange"
                             android:textStyle="bold"
@@ -94,6 +95,7 @@
                             android:textSize="30sp"
                             android:autofillHints=""
                             android:inputType="number"
+                            android:layout_margin="10dp"
                             tools:ignore="VisualLintTextFieldSize" />
 
                         <Button
@@ -104,7 +106,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="15dp"
-                            android:background="@drawable/ribbonbutton"
+                            android:background="@drawable/ribbonbuttonred"
                             android:elevation="3dp"
                             android:text="@string/save_changes"
                             android:textColor="#FFFFFF"
@@ -119,7 +121,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="15dp"
-                            android:background="@drawable/ribbonbutton"
+                            android:background="@drawable/ribbonbuttonred"
                             android:elevation="3dp"
                             android:text="@string/back"
                             android:textColor="#FFFFFF"

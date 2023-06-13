@@ -1,42 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentEnd="true">
-        <LinearLayout
-            android:id="@+id/linearSender"
-            android:layout_width="100dp"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+
+        >
+
+        <TextView
+            android:id="@+id/senderTv"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:orientation="vertical"
-            android:paddingRight="5dp">
+            android:text="@string/hello_world_it_erick"
+            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:background="@drawable/ribbonredsender"
+            android:textColor="@color/white"
+            android:padding="2dp"
+            />
+        <TextView
+            android:layout_below="@id/senderTv"
+            android:id="@+id/dateAndTimeTvSender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date_and_time"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            android:textStyle="italic"
+            android:layout_alignEnd="@id/senderTv"
+            android:layout_marginBottom="2dp"/>
 
-            <TextView
-                android:id="@+id/senderTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/ribbonredsender"
-                android:fontFamily="sans-serif-light"
 
-                android:includeFontPadding="true"
-                android:padding="3dp"
-                android:text="@string/chat"
-                android:textColor="@color/white"
-                android:textSize="24sp" />
-            <TextView
+    </RelativeLayout>
 
-                android:id="@+id/dateAndTimeTvSender"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/date_and_time"
-                android:textColor="@color/black"
-                android:textSize="11sp"
-                android:textStyle="italic" />
-        </LinearLayout>
 
 </RelativeLayout>
-
-
-
-

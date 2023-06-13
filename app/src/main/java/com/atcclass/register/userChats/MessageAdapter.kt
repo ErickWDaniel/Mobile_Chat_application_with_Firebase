@@ -1,10 +1,11 @@
-package com.atcclass.register.UserChats
+package com.atcclass.register.userChats
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.atcclass.register.R
 import com.google.firebase.auth.FirebaseAuth
@@ -12,10 +13,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-class GroupMessageAdapter(
-    val context: Context,
-    private val groupMessageList: ArrayList<GroupMessage>
-) :
+class MessageAdapter(val context: Context, private val messageList: ArrayList<Message>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
@@ -57,22 +55,19 @@ class GroupMessageAdapter(
         }
     }
 
-    override fun getItemCount(): Int = groupMessageList.size
+    override fun getItemCount(): Int = messageList.size
 
     override fun getItemViewType(position: Int): Int {
-        val message = groupMessageList[position]
+        val message = messageList[position]
         return if (message.senderId == FirebaseAuth.getInstance().currentUser?.uid) {
             VIEW_TYPE_SENT
-        } else if (message.groupMember?.contains(FirebaseAuth.getInstance().currentUser?.uid) == true) {
-            VIEW_TYPE_RECEIVED
         } else {
-            throw IllegalArgumentException("Invalid message type")
+            VIEW_TYPE_RECEIVED
         }
     }
 
-
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val message = groupMessageList[position]
+        val message = messageList[position]
 
         if (holder is SentViewHolder) {
             holder.sentMessageTextView.text = message.message
@@ -81,6 +76,22 @@ class GroupMessageAdapter(
             holder.receiveMessageTextView.text = message.message
             holder.receiveDateTextView.text = toDateAndTimeString(message.timestamp)
         }
+        holder.itemView.setOnClickListener {
+            AlertDialog.Builder(context)
+                .setTitle("Delete Chat")
+                .setMessage("Are you sure you want to delete this chat?")
+                .setPositiveButton("Yes") { _, _ ->
+                    deleteGroupMessage(position)
+                }
+                .setNegativeButton("No", null)
+                .show()
+            true
+        }
+
+    }
+    private fun deleteGroupMessage(position: Int) {
+        messageList.removeAt(position)
+        notifyItemRemoved(position)
     }
 
     class SentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

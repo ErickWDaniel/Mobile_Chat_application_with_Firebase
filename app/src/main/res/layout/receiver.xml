@@ -2,34 +2,36 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/receiverTv"
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/chats"
-            android:textSize="24sp"
-            android:layout_margin="5dp"
-            android:background="@drawable/ribbonredsreceiver"
-            android:textColor="@color/white"
-            android:padding="3dp"
-            android:fontFamily="sans-serif-light"
-            />
+            >
 
-        <TextView
-            android:id="@+id/dateAndTimeTvReceiver"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/receiverTv"
-            android:layout_alignStart="@+id/receiverTv"
-            android:text="@string/date_and_time"
-            android:textColor="@color/black"
-            android:textSize="11sp"
-            android:textStyle="italic"
-           />
+                <TextView
+                    android:id="@+id/receiverTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hello_world_it_erick"
+                    android:textSize="18sp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/ribbonredsreceiver"
+                    android:textColor="@color/white"
+                    android:padding="5dp"
+                    />
+                <TextView
+                    android:layout_below="@id/receiverTv"
+                    android:id="@+id/dateAndTimeTvReceiver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/date_and_time"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    android:textStyle="italic"
+                    android:layout_marginBottom="2dp"
+                    android:layout_alignEnd="@id/receiverTv"/>
 
 
-
+        </RelativeLayout>
 
 
 </RelativeLayout>

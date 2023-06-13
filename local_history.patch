@@ -1,0 +1,25 @@
+Index: app/src/main/java/com/atcclass/register/students/Sms.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/atcclass/register/students/Sms.kt b/app/src/main/java/com/atcclass/register/students/Sms.kt
+--- a/app/src/main/java/com/atcclass/register/students/Sms.kt	
++++ b/app/src/main/java/com/atcclass/register/students/Sms.kt	(date 1686658339443)
+@@ -12,6 +12,7 @@
+ import android.webkit.WebView
+ import android.webkit.WebViewClient
+ import com.atcclass.register.R
++import com.atcclass.register.start.ui.MainActivity
+ import com.atcclass.register.start.ui.memo.MemoFragment
+ import com.google.android.material.floatingactionbutton.FloatingActionButton
+ import java.io.File
+@@ -34,7 +35,7 @@
+                 webView.goBack()
+             }
+             else{
+-                val goback = Intent(this, MemoFragment::class.java)
++                val goback = Intent(this, MainActivity::class.java)
+                 startActivity(goback)
+                 finish()
+             }

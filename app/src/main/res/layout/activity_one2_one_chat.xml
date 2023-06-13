@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserChats.GroupAndUserChat"
+    tools:context=".userChats.One2OneChat"
     >
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -43,7 +43,7 @@
         android:src="@drawable/attach_icon_send" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/convosgrouprecycle"
+        android:id="@+id/convosone2oneprecycle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/my_toolbar"

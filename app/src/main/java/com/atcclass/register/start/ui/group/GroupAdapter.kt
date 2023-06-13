@@ -7,7 +7,6 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,8 +14,12 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.atcclass.register.groupChats.GroupAndUserChat
 import com.atcclass.register.R
-import com.atcclass.register.UserChats.GroupAndUserChat
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import de.hdodenhof.circleimageview.CircleImageView
 
 class GroupAdapter(
@@ -45,13 +48,45 @@ class GroupAdapter(
                 .show()
             true
         }
+
         holder.itemView.setOnClickListener {
-            val letsChat = Intent(context, GroupAndUserChat::class.java)
-            letsChat.putExtra("name", currentGroup.group_name)
-            letsChat.putExtra("uid", currentGroup.uid)
-            letsChat.putExtra("module_name", currentGroup.module_name)
-            context.startActivity(letsChat)
+            val groupName = currentGroup.group_name
+            val moduleName = currentGroup.module_name
+            if (groupName != null) {
+                if (moduleName != null) {
+                    fetchGroupUid(groupName, moduleName) { groupUid ->
+                        val letsChat = Intent(context, GroupAndUserChat::class.java)
+                        letsChat.putExtra("name", groupName)
+                        letsChat.putExtra("group_uid", groupUid)
+                        letsChat.putExtra("module_name", moduleName)
+                        context.startActivity(letsChat)
+                    }
+                }
+            }
         }
+    }
+
+    private fun fetchGroupUid(groupName: String, moduleName: String, callback: (String) -> Unit) {
+        val databaseReference = FirebaseDatabase.getInstance().getReference("groups")
+        val query = databaseReference.orderByChild("group_name").equalTo(groupName)
+        query.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (groupSnapshot in snapshot.children) {
+                    val group = groupSnapshot.getValue(Groups::class.java)
+                    if (group != null && group.module_name == moduleName) {
+                        val groupUid = groupSnapshot.key
+                        callback(groupUid ?: "")
+                        return
+                    }
+                }
+                callback("") // If no matching group_uid found, invoke callback with an empty string
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Handle any errors that may occur during the database fetch
+                // You can log the error or show an error message to the user
+            }
+        })
     }
 
     override fun getItemCount(): Int {
@@ -77,11 +112,11 @@ class GroupAdapter(
             // Set the first letter of the group name as the image
             val firstLetter = currentGroup.group_name?.firstOrNull()
             if (firstLetter != null) {
-                val drawable = createTextDrawable(firstLetter)
+                //here wer set the first letter to be capital letter for the group image
+                val drawable = createTextDrawable(firstLetter.uppercaseChar())
                 groupImage.setImageDrawable(drawable)
             }
 
-            Log.e(TAG, "groupName: ${groupName.text}, level: ${level.text}, moduleName: ${moduleName.text}")
         }
 
         private fun createTextDrawable(text: Char): Drawable {
@@ -94,7 +129,6 @@ class GroupAdapter(
             val paint = Paint(Paint.ANTI_ALIAS_FLAG)
             paint.color = ContextCompat.getColor(context, R.color.circle_image_background)
             canvas.drawCircle((size / 2).toFloat(), (size / 2).toFloat(), (size / 2).toFloat(), paint)
-
             paint.color = Color.WHITE
             paint.textSize = size.toFloat() * 0.6f
             paint.textAlign = Paint.Align.CENTER
@@ -106,7 +140,4 @@ class GroupAdapter(
         }
     }
 
-    companion object {
-        const val TAG = "GroupAdapter"
-    }
 }

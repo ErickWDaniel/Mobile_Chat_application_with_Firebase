@@ -1,5 +1,3 @@
-package com.atcclass.register.UserChats
-
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -7,13 +5,16 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.atcclass.register.R
+import com.atcclass.register.groupChats.GroupMessage
 import com.google.firebase.auth.FirebaseAuth
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-class MessageAdapter(val context: Context, private val messageList: ArrayList<Message>) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class GroupMessageAdapter(
+    private val context: Context,
+    private val groupMessageList: ArrayList<GroupMessage>
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
         private const val VIEW_TYPE_SENT = 1
@@ -37,8 +38,6 @@ class MessageAdapter(val context: Context, private val messageList: ArrayList<Me
                 else -> SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(date)
             }
         }
-
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -56,26 +55,31 @@ class MessageAdapter(val context: Context, private val messageList: ArrayList<Me
         }
     }
 
-    override fun getItemCount(): Int = messageList.size
+    override fun getItemCount(): Int = groupMessageList.size
 
     override fun getItemViewType(position: Int): Int {
-        val message = messageList[position]
-        return if (message.senderId == FirebaseAuth.getInstance().currentUser?.uid) {
-            VIEW_TYPE_SENT
-        } else {
-            VIEW_TYPE_RECEIVED
+        val message = groupMessageList[position]
+        val currentUserUid = FirebaseAuth.getInstance().currentUser?.uid
+
+        return when {
+            message.senderId == currentUserUid -> VIEW_TYPE_SENT
+            else -> VIEW_TYPE_RECEIVED
         }
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val message = messageList[position]
+        val message = groupMessageList[position]
 
         if (holder is SentViewHolder) {
             holder.sentMessageTextView.text = message.message
-            holder.sentDateTextView.text = toDateAndTimeString(message.timestamp)
+            if (message.timestamp is String) {
+                holder.sentDateTextView.text = toDateAndTimeString(message.timestamp as String)
+            }
         } else if (holder is ReceiveViewHolder) {
             holder.receiveMessageTextView.text = message.message
-            holder.receiveDateTextView.text = toDateAndTimeString(message.timestamp)
+            if (message.timestamp is String) {
+                holder.receiveDateTextView.text = toDateAndTimeString(message.timestamp as String)
+            }
         }
     }
 
@@ -89,4 +93,3 @@ class MessageAdapter(val context: Context, private val messageList: ArrayList<Me
         val receiveDateTextView: TextView = itemView.findViewById(R.id.dateAndTimeTvReceiver)
     }
 }
-

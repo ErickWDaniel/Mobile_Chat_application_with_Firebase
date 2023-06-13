@@ -1,10 +1,10 @@
-package com.atcclass.register.UserChats
+package com.atcclass.register.userChats
 
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class Message(var message: String? = null, var senderId: String? = null) {
-    val timestamp: String
+    var timestamp: String
     var dateNTime: String = ""
 
     init {

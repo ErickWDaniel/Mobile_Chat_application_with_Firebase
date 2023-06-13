@@ -9,14 +9,30 @@
         android:icon="@drawable/group_icon_add"
         app:showAsAction="ifRoom"
         android:contentDescription="@string/new_group"
-
         />
+
     <item
-        android:id="@+id/profileletu"
+        android:id="@+id/Profile"
         android:title="@string/profile"
         android:icon="@drawable/profile_icon"
         app:showAsAction="collapseActionView"
         android:contentDescription="@string/profile_details"/>
+
+    <item
+        android:id="@+id/sms"
+        android:title="@string/sms"
+        android:icon="@drawable/sms_icon"
+        app:showAsAction="collapseActionView"
+        android:contentDescription="@string/sms_section"/>
+
+    <item
+        android:id="@+id/adminPage"
+        android:title="@string/admin"
+        android:icon="@drawable/admini_icon"
+        app:showAsAction="collapseActionView"
+        android:contentDescription="@string/admin"
+        />
+
     <item
         android:id="@+id/logout"
         android:title="@string/log_out"
@@ -24,11 +40,5 @@
         app:showAsAction="collapseActionView"
         android:contentDescription="@string/log_out"/>
 
-    <item
-        android:id="@+id/search_yetu"
-        android:icon="@drawable/search_icon"
-        android:title="@string/search"
-        app:showAsAction="always|collapseActionView"
-        app:actionViewClass="com.google.android.material.search.SearchBar"/>
 
 </menu>

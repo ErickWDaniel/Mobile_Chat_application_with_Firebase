@@ -1,4 +1,4 @@
-package com.atcclass.register.UserChats
+package com.atcclass.register.userChats
 
 import android.app.AlertDialog
 import android.app.Dialog
@@ -194,7 +194,7 @@ class One2OneChat : AppCompatActivity() {
         receiverRoom = senderUid + receiverUid
         senderRoom = receiverUid + senderUid
 
-        convoOneOnOneRecycle = findViewById(R.id.convosgrouprecycle)
+        convoOneOnOneRecycle = findViewById(R.id.convosone2oneprecycle)
         messageBox = findViewById(R.id.chatBox)
         sendButton = findViewById(R.id.sendMessageButton)
         messageList = ArrayList()
@@ -273,6 +273,7 @@ class One2OneChat : AppCompatActivity() {
         return (activeNetworkInfo != null)
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         var PICK_FILE_REQUEST = 100
@@ -316,7 +317,7 @@ class One2OneChat : AppCompatActivity() {
         }
     }
 
-    //TODO REMEBER BELOW ITS NOT YET IMPLEMENTED
+    //TODO REMEMBER BELOW ITS NOT YET IMPLEMENTED
     private fun uploadFileToFirebase() {
         // Get a reference to the Firebase Storage instance
         val storage = FirebaseStorage.getInstance()

@@ -21,5 +21,6 @@
         android:id="@+id/navigation_memo"
         android:name="com.atcclass.register.start.ui.memo.MemoFragment"
         android:label="Memo"
-        tools:layout="@layout/fragment_memo" />
+        tools:layout="@layout/fragment_memo"
+        />
 </navigation>

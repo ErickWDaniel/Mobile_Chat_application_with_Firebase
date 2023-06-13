@@ -9,16 +9,18 @@
     <color name="atcyellow">#E9E435</color>
     <color name="icongrey">#FF404040</color>
     <color name="maziwa">#FFD764</color>
-    <color name="atcorangish">#F37E00</color>
+    <color name="atcorangish">#F6741B</color>
     <color name="atcgray">#80ACA9A9</color>
-    <color name="darkerred">#F59501</color>
-    <color name="redish">#FE9B00</color>
+    <color name="darkerred">#F6741B</color>
+    <color name="redish">#F6741B</color>
     <color name="colorPrimary">@color/redish</color>
     <color name="colorPrimaryDark">@color/darkerred</color>
     <color name="colorAccent">#E91E63</color>
     <color name="purple">#AF32AA</color>
     <color name="orageGtc">#FECD45</color>
-    <color name="circle_image_background">#FF4081</color>
-
+    <color name="circle_image_background">#4CAF50</color>
+    <color name="greensms">#28A645</color>
+    <color name="blueadmin">#1A73E7</color>
+    <color name="pupple_yetu">#E91E63</color>
 
 </resources>

@@ -2,12 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".start.ui.group.GroupFragment">
+    android:layout_height="wrap_content"
+    tools:context=".start.ui.group.GroupFragment"
+    android:background="@drawable/bgerick"
+    android:orientation="vertical">
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="10dp"
         android:id="@+id/recycleGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bgerickkn"
+        android:background="@drawable/bgerick"
         tools:listitem="@layout/card_view_group" />
 </RelativeLayout>

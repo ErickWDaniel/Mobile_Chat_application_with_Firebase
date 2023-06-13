@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Register"
         tools:targetApi="31">
         <activity
+            android:name=".admin.Admin"
+            android:exported="false" />
+        <activity
+            android:name=".students.Sms"
+            android:exported="false" />
+        <activity
             android:name=".profile.Profile"
             android:exported="false" />
         <!--
@@ -24,30 +30,28 @@
         <!-- remeber on activity   android:screenOrientation="portrait" -->
         <!-- android:theme="@style/NoActionBarTheme" -->
         <!-- android:windowSoftInputMode="adjustResize" -->
-        <activity
-            android:name=".UserChats.GroupAndUserChat"
-            android:exported="false"
-            android:screenOrientation="fullSensor"
-            android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".authetication.ForgetPassword"
             android:exported="false"
             android:screenOrientation="fullSensor"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".UserChats.One2OneChat"
+            android:name=".userChats.One2OneChat"
             android:exported="false"
             android:screenOrientation="fullSensor"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.atcclass.register.groupChats.GroupAndUserChat"
+            android:screenOrientation="fullSensor"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
         <activity
             android:name=".authetication.Register"
             android:exported="false"
             android:screenOrientation="fullSensor"
             android:theme="@style/NoActionBarTheme"
-            android:windowSoftInputMode="adjustResize" />
-
-<!--        Starting/landing page-->
-
+            android:windowSoftInputMode="adjustResize" /> <!-- Starting/landing page -->
         <activity
             android:name=".authetication.Login"
             android:exported="true"
@@ -56,10 +60,10 @@
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".start.ui.MainActivity"
             android:exported="false"

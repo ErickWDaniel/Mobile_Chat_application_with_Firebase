@@ -1,8 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
+   <!-- there actionbaction on below layour with this theme-->
     <style name="Base.Theme.Register" parent="Theme.Design.Light">
         <item name="android:statusBarColor">#FE9B00</item>
-
     </style>
     <style name="Theme.Register" parent="Base.Theme.Register" />
 <!--up here we create customise piece of theme for Navigation(bottom bar)
@@ -10,11 +10,9 @@ by override the primary theme by take part of it-->
     <style name="Theme.Custom" parent="Base.Theme.Register">
         <item name="toolbarStyle">@style/Theme.Custom.Toolbar</item>
         <item name="android:textColor">#E91E63</item>
-
-
     </style>
 
-
+<!--For the place with no actionbar-->
     <style name="NoActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -27,6 +25,12 @@ by override the primary theme by take part of it-->
         <item name="android:background">@color/colorPrimaryDark</item>
         <item name="android:elevation">@dimen/cardview_default_elevation</item>
        </style>
+
+   <!-- For alertDialogBox i create this for customised alert-box-->
+    <style name="BlueAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">#03A9F4</item>
+    </style>
+
 
 
 

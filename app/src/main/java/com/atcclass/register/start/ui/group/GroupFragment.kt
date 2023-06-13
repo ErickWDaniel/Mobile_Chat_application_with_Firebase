@@ -22,7 +22,6 @@ class GroupFragment : Fragment() {
     private lateinit var groupAdapter: GroupAdapter
     private lateinit var databaseRef: DatabaseReference
     private lateinit var groupListener: ValueEventListener
-    private lateinit var currentUserID: String
     private lateinit var context: Context
 
     override fun onAttach(context: Context) {
@@ -57,7 +56,7 @@ class GroupFragment : Fragment() {
                     if ((group != null) && (group.uid != currentUserID)) {
                         groupList.add(group)
                     }
-                    Log.e(TAG, "DATA Toka group 11 ${snapshot}")
+                    Log.e(TAG, "DATA Toka group new")
                 }
                 groupAdapter = GroupAdapter(groupList, context)
                 groupRecycler.adapter = groupAdapter

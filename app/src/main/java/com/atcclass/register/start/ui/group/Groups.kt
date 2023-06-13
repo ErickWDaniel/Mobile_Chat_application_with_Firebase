@@ -5,6 +5,4 @@ class Groups(
     var group_name: String? = null,
     var level: String? = null,
     var module_name: String? = null,
-    var members: ArrayList<String>? = null
-
-)
+   )

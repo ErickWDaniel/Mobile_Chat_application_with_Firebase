@@ -4,6 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Admin.Admin">
+    tools:context=".admin.Admin">
 
+   <WebView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:id="@+id/webadmin"
+
+       />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/backfromadmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:backgroundTint="@color/blueadmin"
+        android:src="@drawable/back_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:elevation="3dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

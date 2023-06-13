@@ -7,12 +7,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.atcclass.register.R
-import com.atcclass.register.UserChats.One2OneChat
+import com.atcclass.register.userChats.One2OneChat
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -71,11 +70,11 @@ class UserAdapter(
             context.startActivity(letsChat)
         }
 
-        //On long hold you can delete your own list on your screen
+        //On long hold you can delete your own list on your screen only
         holder.itemView.setOnLongClickListener {
             AlertDialog.Builder(context)
                 .setTitle("Delete Chat")
-                .setMessage("Are you sure you want to delete this Chat?")
+                .setMessage("Are you sure you want to delete this User in Your List?")
                 .setPositiveButton("Yes") { _, _ ->
                     deleteChat(position)
                 }

@@ -23,9 +23,7 @@
     <string name="module">Module</string>
     <string name="user_dp">User Dp</string>
     <string name="user_name">User Name</string>
-    <string name="module_name">Module Name</string>cmdcmd
-
-
+    <string name="module_name">Module Name</string>
     <string name="next">NEXT</string>
     <string name="cancel">Cancel</string>
     <string name="module_code">Module Code</string>
@@ -34,7 +32,7 @@
     <string name="phone_number">Phone Number</string>
     <string name="upload_user_profile">Upload User Profile</string>
     <string name="upload_your_photo_here">Upload Your Photo Here</string>
-    <string name="type_her_to_chat">Type Her To Chat</string>
+    <string name="type_her_to_chat">Type Here To Chat</string>
     <string name="send_chat_button">Send chat Button</string>
     <string name="send_chat_btn">Send Chat Btn</string>
     <string name="chats">Chats</string>
@@ -59,4 +57,9 @@
     <string name="profile_details">Profile Details</string>
     <string name="upload_photo">UPLOAD PHOTO</string>
     <string name="profile_picure">Profile Picure</string>
+    <string name="hello_world_it_erick">Hello World,It Erick</string>
+    <string name="sms">SMS</string>
+    <string name="sms_section">SMS Section</string>
+    <string name="here_admin_should_see_all_option_for_adminsttrator">Here admin should see all option for adminsttrator</string>
+    <string name="admin">Admin</string>
 </resources>

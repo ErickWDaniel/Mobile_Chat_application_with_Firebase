@@ -33,6 +33,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
+@Suppress("DEPRECATION")
 class Register : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
     private lateinit var buttonSignUp: Button
@@ -273,7 +274,7 @@ class Register : AppCompatActivity() {
                     uploadTask.addOnSuccessListener { taskSnapshot ->
                         // Image upload successful
                         taskSnapshot.metadata?.reference?.downloadUrl?.addOnSuccessListener { downloadUrl ->
-                           Toast.makeText(this, "Image uploaded", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Image uploaded", Toast.LENGTH_SHORT).show()
                         }
                     }.addOnFailureListener { exception ->
                         // Image upload failed
