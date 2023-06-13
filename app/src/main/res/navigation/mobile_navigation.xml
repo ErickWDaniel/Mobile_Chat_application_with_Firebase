@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_memo">
+
+    <fragment
+        android:id="@+id/navigation_chats"
+        android:name="com.atcclass.register.start.ui.chat.ChatFragment"
+        android:label="Chat"
+        tools:layout="@layout/fragment_chat" />
+
+    <fragment
+        android:id="@+id/navigation_group"
+        android:name="com.atcclass.register.start.ui.group.GroupFragment"
+        android:label="Group"
+        tools:layout="@layout/fragment_group" />
+
+    <fragment
+        android:id="@+id/navigation_memo"
+        android:name="com.atcclass.register.start.ui.memo.MemoFragment"
+        android:label="Memo"
+        tools:layout="@layout/fragment_memo" />
+</navigation>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".profile.Profile"
+    android:orientation="vertical"
+    android:background="@drawable/skya"
+   >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp"
+            android:background="@drawable/ribbonredempty"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="2dp"
+            >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/profile_image_Update"
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/usericon"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/profile_picure" />
+
+                        <Button
+                            android:id="@+id/change_photo_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/ribbonbutton"
+
+                            android:elevation="3dp"
+                            android:text="@string/upload_photo"
+                            android:textColor="#FFFFFF"
+                            tools:ignore="VisualLintButtonSize,TextContrastCheck" />
+
+                        <TextView
+                            android:id="@+id/username_textview_update"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="@string/username"
+                            android:textColor="@color/atcorange"
+                            android:textStyle="bold"
+                            tools:ignore="TextContrastCheck" />
+
+                        <EditText
+                            android:id="@+id/username_edittext_update"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:autofillHints=""
+                            android:background="@drawable/ribbonwebview"
+                            android:hint="@string/enter_username"
+                            android:inputType="text"
+                            android:minHeight="48dp"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:textSize="30sp"
+                            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
+
+                        <TextView
+                            android:id="@+id/admission_number_textview_update"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="@string/admission_number"
+                            android:textColor="@color/atcorange"
+                            android:textStyle="bold"
+                            tools:ignore="TextContrastCheck" />
+
+                        <EditText
+                            android:id="@+id/admission_number_text_view_update"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/ribbonwebview"
+                            android:hint="@string/enter_admission_number"
+                            android:minHeight="48dp"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:textSize="30sp"
+                            android:autofillHints=""
+                            android:inputType="number"
+                            tools:ignore="VisualLintTextFieldSize" />
+
+                        <Button
+                            android:id="@+id/save_button_update"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="15dp"
+                            android:background="@drawable/ribbonbutton"
+                            android:elevation="3dp"
+                            android:text="@string/save_changes"
+                            android:textColor="#FFFFFF"
+                            tools:ignore="VisualLintButtonSize,TextContrastCheck" />
+
+                        <Button
+                            android:id="@+id/profileback"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="15dp"
+                            android:background="@drawable/ribbonbutton"
+                            android:elevation="3dp"
+                            android:text="@string/back"
+                            android:textColor="#FFFFFF"
+                            tools:ignore="VisualLintButtonSize,TextContrastCheck" />
+
+                </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>

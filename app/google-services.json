@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1022753275515",
+    "project_id": "final-year-project-atc",
+    "storage_bucket": "final-year-project-atc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022753275515:android:e04a2c2cfc372bfeaeecde",
+        "android_client_info": {
+          "package_name": "com.atcclass.register"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1022753275515-eadjbf9j7h101nurvchj5i6hasges8fu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC67mP9yqaDFkXuKT4OnRIUGmZwDopXNeM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1022753275515-eadjbf9j7h101nurvchj5i6hasges8fu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

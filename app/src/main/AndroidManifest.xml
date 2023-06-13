@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/atclogo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/atclogo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Register"
+        tools:targetApi="31">
+        <activity
+            android:name=".profile.Profile"
+            android:exported="false" />
+        <!--
+   Erick remember this is for screen resize and theme customization
+   android:screenOrientation="portrait"
+        -->
+        <!-- android:theme="___ADD YOUR OWN THEME____" -->
+        <!-- android:windowSoftINputMode="adjustResize"> -->
+        <!-- remeber on activity   android:screenOrientation="portrait" -->
+        <!-- android:theme="@style/NoActionBarTheme" -->
+        <!-- android:windowSoftInputMode="adjustResize" -->
+        <activity
+            android:name=".UserChats.GroupAndUserChat"
+            android:exported="false"
+            android:screenOrientation="fullSensor"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".authetication.ForgetPassword"
+            android:exported="false"
+            android:screenOrientation="fullSensor"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".UserChats.One2OneChat"
+            android:exported="false"
+            android:screenOrientation="fullSensor"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".authetication.Register"
+            android:exported="false"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/NoActionBarTheme"
+            android:windowSoftInputMode="adjustResize" />
+
+<!--        Starting/landing page-->
+
+        <activity
+            android:name=".authetication.Login"
+            android:exported="true"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/NoActionBarTheme"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".start.ui.MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Custom" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

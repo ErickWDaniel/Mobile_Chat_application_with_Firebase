@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserChats.GroupAndUserChat"
+    >
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/ribbonbutton"
+        app:titleTextColor="@android:color/white"
+        app:title="Show here"
+        tools:ignore="MissingConstraints"
+        app:titleMarginStart="3dp"
+        />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/backChatBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foregroundGravity="bottom"
+        android:src="@drawable/back_icon"
+      android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:backgroundTint="@color/atcyellow"
+        android:contentDescription="@string/back" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/attach_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-1dp"
+        android:layout_marginEnd="2dp"
+        android:layout_toStartOf="@+id/backChatBtn"
+        android:backgroundTint="@color/atcyellow"
+        android:clickable="true"
+        android:contentDescription="@string/back"
+        android:focusable="true"
+        android:foregroundGravity="bottom"
+        android:elevation="2dp"
+        android:src="@drawable/attach_icon_send" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/groupconvosgrouprecycle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/my_toolbar"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+        android:elevation="2dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/linearconvosbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+       android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:weightSum="100"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+
+        >
+
+        <EditText
+            android:id="@+id/chatBox"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_weight="95"
+            android:autofillHints=""
+            android:background="@drawable/chatboxribbon"
+            android:hint="@string/type_her_to_chat"
+            android:inputType="text"
+            android:paddingStart="5dp"
+            android:paddingEnd="0dp"
+            tools:ignore="TextContrastCheck"
+           />
+
+        <ImageButton
+            android:id="@+id/sendMessageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="2dp"
+            android:layout_weight="5"
+            android:background="@drawable/ribbonorange"
+            android:contentDescription="@string/send_chat_btn"
+            android:minWidth="48dp"
+            android:src="@drawable/send_icon" />
+    </LinearLayout>
+
+</RelativeLayout>
